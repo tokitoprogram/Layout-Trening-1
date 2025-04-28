@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,48 +147,49 @@
                 <p class="banner-p">лучшее вложение средств</p>
             </div>
         </section>
+        
     </main>
     <footer>
 
     </footer>
 <script>
         // Элемент, у которого будет меняться фон
-        const backgroundElement = $('#background-element');
+        // const backgroundElement = $('#background-element');
 
-        // Функция для смены фона по порядку
-        function changeBackgroundSequentially(imageFiles) {
-            let currentIndex = 0; // Начинаем с первого изображения
+        // // Функция для смены фона по порядку
+        // function changeBackgroundSequentially(imageFiles) {
+        //     let currentIndex = 0; // Начинаем с первого изображения
 
-            // Функция для установки фона
-            function setNextBackground() {
-                if (imageFiles.length === 0) {
-                    console.error('Нет доступных изображений');
-                    return;
-                }
+        //     // Функция для установки фона
+        //     function setNextBackground() {
+        //         if (imageFiles.length === 0) {
+        //             console.error('Нет доступных изображений');
+        //             return;
+        //         }
 
-                // Берем текущее изображение
-                const currentImage = imageFiles[currentIndex];
-                const imagePath = `./images/banner/${currentImage}`; // Путь к изображению
-                backgroundElement.css('background-image', `url('${imagePath}'`)
+        //         // Берем текущее изображение
+        //         const currentImage = imageFiles[currentIndex];
+        //         const imagePath = `./images/banner/${currentImage}`; // Путь к изображению
+        //         backgroundElement.css('background-image', `url('${imagePath}'`)
 
-                // Увеличиваем индекс для следующего изображения
-                currentIndex = (currentIndex + 1) % imageFiles.length; // Циклический переход
-            }
+        //         // Увеличиваем индекс для следующего изображения
+        //         currentIndex = (currentIndex + 1) % imageFiles.length; // Циклический переход
+        //     }
 
-            // Сразу устанавливаем первый фон
-            setNextBackground();
+        //     // Сразу устанавливаем первый фон
+        //     setNextBackground();
 
-            // Каждую минуту меняем фон
-            setInterval(setNextBackground, 60000); // 60000 мс = 1 минута
-        }
+        //     // Каждую минуту меняем фон
+        //     setInterval(setNextBackground, 60000); // 60000 мс = 1 минута
+        // }
 
-        // Получаем список изображений через AJAX
-        fetch('get_images.php')
-            .then(response => response.json())
-            .then(images => {
-                changeBackgroundSequentially(images); // Начинаем последовательную смену фона
-            })
-            .catch(error => console.error('Ошибка при получении данных:', error));
+        // // Получаем список изображений через AJAX
+        // fetch('php/get_images.php')
+        //     .then(response => response.json())
+        //     .then(images => {
+        //         changeBackgroundSequentially(images); // Начинаем последовательную смену фона
+        //     })
+        //     .catch(error => console.error('Ошибка при получении данных:', error));
     // $(document).ready(function(){
 
     //     $("body").click(function(e) {
